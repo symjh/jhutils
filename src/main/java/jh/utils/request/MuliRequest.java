@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
 
 /**
  * 用java发送各种请求
@@ -76,7 +77,10 @@ public class MuliRequest {
     public static InputStream simpleRequest(String url){
 
         try {
-            URLConnection connection = new URL(url).openConnection();
+            HashMap<String,String> map = new HashMap<>();
+//            map.computeIfAbsent(
+//            map.computeIfPresent()
+            HttpURLConnection connection = (HttpURLConnection)new URL(url).openConnection();
             connection.setConnectTimeout(TIMEOUT);
             InputStream in = connection.getInputStream();
 

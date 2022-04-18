@@ -12,6 +12,14 @@ public class Exec {
 
     private Integer index;
 
+    @Override
+    public String toString() {
+        return "Exec{" +
+                "fis=" + fis +
+                ", index=" + index +
+                '}';
+    }
+
     public void run() {
         System.out.println(this.fis);
         System.out.println(this.index);
