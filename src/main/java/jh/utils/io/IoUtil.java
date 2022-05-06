@@ -1,9 +1,7 @@
 package jh.utils.io;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.awt.*;
+import java.io.*;
 
 public class IoUtil {
 
@@ -27,5 +25,18 @@ public class IoUtil {
         }
         return sb.toString();
     }
+
+    public static void main(String[] args) {
+
+        File file = new File("C:\\Users\\jhjia\\Desktop\\1.xlsx");
+
+        if(file.renameTo(file)){
+            System.out.println("11");
+        }else{
+            System.out.println("22");
+        }
+
+    }
+
 
 }
