@@ -16,12 +16,25 @@ public class DownloadImage {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        String format = "https://%s.jpg";
-        for(int i = 900;i<2000;i++) {
+        String format = "%s";
+//        download(format, "C:\\temp");
+        for(int i = 1;i<9999;i++) {
             String bit4 = bit4(i);
             System.out.println(String.format(format,bit4));
-            download(String.format(format,bit4), "C:\\temp");
+            download(String.format(format,bit4), "C:\\temp\\38");
         }
+    }
+
+    public static String bit3(Integer i){
+        String temp = String.valueOf(i);
+        if(temp.length() == 1){
+            temp = "00"+temp;
+        }else if(temp.length() == 2){
+            temp = "0"+temp;
+        }else if(temp.length() == 3){
+            temp = ""+temp;
+        }
+        return temp;
     }
 
     public static String bit4(Integer i){
@@ -42,12 +55,12 @@ public class DownloadImage {
         // 打开连接
         URLConnection con = url.openConnection();
         //设置请求超时为5s
-        con.setConnectTimeout(5*1000);
+        con.setConnectTimeout(5*60000*1000);
         con.setRequestProperty("User-agent","Mozilla/5.0");
         // 输入流
         InputStream is = con.getInputStream();
         // 1K的数据缓冲
-        byte[] bs = new byte[1024];
+        byte[] bs = new byte[1024*1024*10];
         // 读取到的数据长度
         int len;
         // 输出的文件流

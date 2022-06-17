@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>JSON格式化</title>
+</head>
+
+
+<body>
+    <form>
+
+        <label>url:</label>
+        </br>
+        <input id="url" type="text" value="" />
+        </br>
+
+        <label>charset:</label>
+        <select>
+            <option value="UTF-8" selected="selected">UTF-8</option>
+        </select>
+        </br>
+
+        <label>header:</label>
+        </br>
+        <textarea id="header" class="area_s"></textarea>
+        </br>
+
+        <label>body:</label>
+        <select>
+            <option value="json" selected="selected">application/json</option>
+            <option value="x-www-form-urlencoded">application/x-www-form-urlencoded</option>
+            <option value="form-data">multipart/form-data</option>
+            <option value="plain">text/plain</option>
+            <option value="xml">text/xml</option>
+        </select>
+        </br>
+        <textarea id="body" class="area_s"></textarea>
+        </br>
+
+    </form>
+
+<script>
+
+</script>
+
+<style>
+    html, body { height: 98%; }
+    .area_s {
+        min-width: 45%;
+        max-width: 45%;
+        min-height: 50%;
+        max-height: 50%;
+        float: left;
+    }
+</style>
+
+</body>
+</html>

@@ -3,6 +3,7 @@ package jh.utils.request;
 import com.sun.org.apache.bcel.internal.generic.RETURN;
 import jh.utils.StringUtil;
 import jh.utils.io.IoUtil;
+import org.apache.http.entity.ContentType;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -68,7 +69,7 @@ public class MuliRequest {
 
     public static void main(String[] args) throws Exception {
 
-        MuliRequest.builder().addUrl("http://localhost:8888/getVT").addThreadCount(10).start();
+//        MuliRequest.builder().addUrl("http://localhost:8888/getVT").addThreadCount(10).start();
         MuliRequest.builder().addUrl("http://www.baidu.com/").addThreadCount(10).start();
 //        System.out.println(simpleRequestStr("http://localhost:8888/getVT"));
 
