@@ -92,13 +92,46 @@ public class DPQuestion {
         return rs[m-1][n-1];
     }
 
+//    问题：给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+//            说明：每次只能向下或者向右移动一步
+//    举例：
+//            输入arr[
+//                    [1,3,1],
+//                    [1,5,1],
+//                    [4,2,1]
+//            ]
+//            输出：7
+    public static Integer minPath(Integer[][] arr2){
+        ArrayView.view2D(arr2);
+        // 分析 到达 (m,n) 的最少路径 = min   (  (m-1,n) +  (m,n)的值 , (m,n-1) +  (m,n)的值  )
+        Integer[][] rs = new Integer[arr2.length][arr2[0].length];
+
+
+
+        for(int x = 0;x<arr2.length;x++){
+            for(int y = 0;y<arr2[x].length;y++) {
+                if(x==0 && y == 0){
+                    rs[x][y] = arr2[x][y];
+                } else if (x == 0) {
+                    rs[x][y] = rs[x][y-1];
+                } else if(y == 0){
+                    rs[x][y] = rs[x-1][y];
+                } else {
+                    rs[x][y] = Math.min(rs[x - 1][y], rs[x][y - 1]);
+                }
+            }
+        }
+        ArrayView.view2D(rs);
+
+        return rs[arr2.length-1][arr2[arr2.length-1].length-1];
+    }
 
 
     public static void main(String[] args) {
         minCount(200);
         frog(20);
         bot(8,8);
-
+        minPath(new Integer[][]{new Integer[]{1,3,1},new Integer[]{1,5,1},new Integer[]{4,2,1}});
 
     }
 

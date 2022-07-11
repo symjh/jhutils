@@ -16,7 +16,12 @@ public class ArrayView {
 
             }
         }
+    }
 
+    public static void view(int[] rs){
+        for(int x=0;x<rs.length;x++){
+            System.out.print(rs[x]+" ");
+        }
     }
 
     // 补位

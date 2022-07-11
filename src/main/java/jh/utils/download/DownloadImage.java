@@ -19,10 +19,20 @@ public class DownloadImage {
         String format = "%s";
 //        download(format, "C:\\temp");
         for(int i = 1;i<9999;i++) {
-            String bit4 = bit4(i);
+            String bit4 = bit3(i);
             System.out.println(String.format(format,bit4));
-            download(String.format(format,bit4), "C:\\temp\\38");
+            download(String.format(format,bit4), "C:\\temp\\3");
         }
+    }
+
+    public static String bit2(Integer i){
+        String temp = String.valueOf(i);
+        if(temp.length() == 1){
+            temp = "0"+temp;
+        }else if(temp.length() == 2){
+            temp = temp;
+        }
+        return temp;
     }
 
     public static String bit3(Integer i){
